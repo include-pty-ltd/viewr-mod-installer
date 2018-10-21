@@ -1,0 +1,11 @@
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\bin\Release\run-me.exe.config
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\bin\Release\run-me.exe
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\bin\Release\run-me.pdb
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\bin\Release\Newtonsoft.Json.dll
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\bin\Release\Newtonsoft.Json.xml
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\ViewRModInstaller.csprojResolveAssemblyReference.cache
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\Include.VR.Viewer.Mod.frmViewrModLoader.resources
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\Include.VR.Viewer.Mod.Properties.Resources.resources
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\ViewRModInstaller.csproj.GenerateResource.Cache
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\run-me.exe
+D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\run-me.pdb
