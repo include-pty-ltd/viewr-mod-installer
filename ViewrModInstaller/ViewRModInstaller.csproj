@@ -70,6 +70,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="resources\assets\configs\Beat Saber.zip" />
+    <None Include="resources\assets\configs\SUPERHOTVR.zip" />
+    <None Include="resources\assets\configs\viewrcamera.cfg" />
+    <None Include="resources\assets\configs\viewrplugin.cfg" />
+    <None Include="resources\assets\ipa-source.url" />
+    <None Include="resources\assets\IPA.zip" />
+    <None Include="resources\assets\viewr.asset" />
+    <None Include="resources\games.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,5 +92,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\assets\gfxplugin-viewr.dll" />
+    <Content Include="resources\assets\ViewRMod.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y $(SolutionDir)ViewrModInstaller\resources\games.json $(TargetDir)games.json
+copy /Y $(SolutionDir)ViewrModInstaller\resources\assets $(TargetDir)assets
+copy /Y $(SolutionDir)ViewrModInstaller\resources\assets\configs $(TargetDir)assets\configs</PostBuildEvent>
+  </PropertyGroup>
 </Project>

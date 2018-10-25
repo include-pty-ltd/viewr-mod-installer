@@ -3,12 +3,14 @@
     "SteamAppID": 620980,
     "GameName": "Beat Saber",
     "GameDirectory": "Beat Saber",
-    "ExeName": "Beat Saber.exe"
+    "ExeName": "Beat Saber.exe",
+    "ConfigName": "Beat Saber.zip"
   },
   {
     "SteamAppID": 617830,
     "GameName": "SuperHot VR",
     "GameDirectory": "SUPERHOT VR",
-    "ExeName": "SUPERHOTVR.exe"
+    "ExeName": "SUPERHOTVR.exe",
+    "ConfigName": "SUPERHOTVR.zip"
   }
 ]

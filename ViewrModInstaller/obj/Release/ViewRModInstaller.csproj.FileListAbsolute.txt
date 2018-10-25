@@ -9,3 +9,16 @@ D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModIn
 D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\ViewRModInstaller.csproj.GenerateResource.Cache
 D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\run-me.exe
 D:\Users\CYao\Documents\Visual Studio 2017\Projects\ViewrModInstaller\ViewrModInstaller\obj\Release\run-me.pdb
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\bin\Release\run-me.exe.config
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\bin\Release\run-me.exe
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\bin\Release\run-me.pdb
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\bin\Release\Newtonsoft.Json.dll
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\bin\Release\Newtonsoft.Json.xml
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\ViewRModInstaller.csprojResolveAssemblyReference.cache
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\Include.VR.Viewer.Mod.frmViewrModLoader.resources
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\Include.VR.Viewer.Mod.Properties.Resources.resources
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\ViewRModInstaller.csproj.GenerateResource.cache
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\ViewRModInstaller.csproj.CoreCompileInputs.cache
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\ViewRModInstaller.csproj.CopyComplete
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\run-me.exe
+C:\Users\CYao\Documents\Projects\Include\ViewR\viewr-mod-installer\ViewrModInstaller\obj\Release\run-me.pdb

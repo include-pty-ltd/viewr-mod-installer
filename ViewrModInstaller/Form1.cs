@@ -141,6 +141,7 @@ namespace Include.VR.Viewer.Mod
                 newGame.Library = Path.GetDirectoryName(Path.GetDirectoryName(ofd.FileName));
                 newGame.GameDirectory = Path.GetFileName(Path.GetDirectoryName(ofd.FileName));
                 newGame.GameName = Path.GetFileNameWithoutExtension(ofd.FileName);
+                newGame.ConfigName = "default.zip";
                 lstBox.Items.Add(newGame, true);
                 supportedGameList.Add(newGame);
                 SaveGameList();
