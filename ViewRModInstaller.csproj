@@ -98,8 +98,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y $(SolutionDir)ViewrModInstaller\resources\games.json $(TargetDir)games.json
-copy /Y $(SolutionDir)ViewrModInstaller\resources\assets $(TargetDir)assets
-copy /Y $(SolutionDir)ViewrModInstaller\resources\assets\configs $(TargetDir)assets\configs</PostBuildEvent>
+    <PostBuildEvent>copy /Y $(SolutionDir)resources\games.json $(TargetDir)games.json
+copy /Y $(SolutionDir)resources\assets $(TargetDir)assets
+copy /Y $(SolutionDir)resources\assets\configs $(TargetDir)assets\configs</PostBuildEvent>
   </PropertyGroup>
 </Project>
