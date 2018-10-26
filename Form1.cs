@@ -8,9 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Compression;
 
@@ -168,7 +166,7 @@ namespace Include.VR.Viewer.Mod
             if (File.Exists(installPath + @"\steamapps\libraryfolders.vdf"))
             {
                 // only do the steamapps folder in the current path
-                // fuck valve's data format. 
+                // valve's dumb data format. 
                 Regex r = new Regex(".*{(.+)}.*", RegexOptions.Singleline);
                 MatchCollection mc = r.Matches(File.ReadAllText(installPath + @"\steamapps\libraryfolders.vdf"));
                 string valveGarbageFileContents = mc[0].Groups[1].Captures[0].Value.Trim();
@@ -187,6 +185,7 @@ namespace Include.VR.Viewer.Mod
                     }
                 }
             }
+
             lstBox.Items.Clear();
             foreach (string library in libraryLocations)
             {
@@ -194,14 +193,15 @@ namespace Include.VR.Viewer.Mod
                 foreach (DirectoryInfo d in dip.GetDirectories())
                 {
                     SupportedGame sg = supportedGameList.Where(x => x.GameDirectory == d.Name).FirstOrDefault();
-                    if (sg != null && (sg.SteamAppID == 0 || File.Exists(Path.GetDirectoryName(library) + $"\\appmanifest_{sg.SteamAppID}.acf")))
+                    if (sg != null && File.Exists(Path.GetDirectoryName(library) + $"\\appmanifest_{sg.SteamAppID}.acf") && sg.SteamAppID != 0)
                     {
                         sg.Library = library;
                         lstBox.Items.Add(sg, true);
                     }
                 }
             }
-            // add custom items
+
+            //// add custom items
             List<SupportedGame> custom = supportedGameList.Where(x => x.SteamAppID == 0).ToList();
             foreach (SupportedGame sg in custom)
             {
