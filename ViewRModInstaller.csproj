@@ -99,8 +99,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y $(SolutionDir)resources\games.json $(TargetDir)games.json
+    <PostBuildEvent>rem copy /Y $(SolutionDir)resources\games.json $(TargetDir)games.json
 copy /Y $(SolutionDir)resources\assets $(TargetDir)assets
-copy /Y $(SolutionDir)resources\assets\configs $(TargetDir)assets\configs</PostBuildEvent>
+rem copy /Y $(SolutionDir)resources\assets\configs $(TargetDir)assets\configs</PostBuildEvent>
   </PropertyGroup>
 </Project>
