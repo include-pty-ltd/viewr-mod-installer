@@ -2,15 +2,13 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.IO.Compression;
 
 namespace Include.VR.Viewer.Mod
 {
@@ -36,6 +34,8 @@ namespace Include.VR.Viewer.Mod
 
         private void frmViewrModLoader_Load(object sender, EventArgs e)
         {
+            string[] parts = Application.ProductVersion.Split('.');
+            this.Text += $" v.{parts[1]}{parts[2]}{(parts[3] == "0" ? "" : "." + parts[3])}";
             RefreshData();
         }
 
@@ -82,14 +82,12 @@ namespace Include.VR.Viewer.Mod
                             MessageBox.Show($"Something went wrong while installing IPA{Environment.NewLine}{ex.ToString()}");
                             continue;
                         }
-
                         if (!Directory.Exists($"{directory}\\Plugins"))
                         {
                             // we failed to install ipa even tho ipa says it installed
                             MessageBox.Show($"IPA failed to patch {sg.GameName}");
                             continue;
                         }
-
 
                         //copy plugin
                         try
@@ -108,21 +106,30 @@ namespace Include.VR.Viewer.Mod
                         }
                         catch
                         {
-                            MessageBox.Show($"Missing install files, please download installer again.");
+                            MessageBox.Show($"Could not copy files, please ensure that the game is not running or download installer again.");
                         }
 
-                        if (!File.Exists($"{directory}\\viewrcamera.cfg") &&
-                            !File.Exists($"{directory}\\viewrplugin.cfg") &&
-                            sg.ConfigName != null &&
-                            sg.ConfigName != "" &&
-                            File.Exists($"assets\\configs\\{sg.ConfigName}"))
+                        if ((!File.Exists($"{directory}\\viewrcamera.cfg") && // there's no cameracfg
+                            !File.Exists($"{directory}\\viewrplugin.cfg")) || // and there's no plugincfg
+                            checkBox1.Checked)
                         {
-                            ZipFile.ExtractToDirectory($"assets\\configs\\{sg.ConfigName}", directory);
+                            string cfg = "default.zip";
+                            if (sg.ConfigName != null && sg.ConfigName != "")
+                            {
+                                cfg = sg.ConfigName;
+                            }
+
+                            if (File.Exists($"assets\\configs\\{cfg}"))
+                            {
+                                if (File.Exists($"{directory}\\viewrcamera.cfg")) File.Delete($"{directory}\\viewrcamera.cfg");
+                                if (File.Exists($"{directory}\\viewrplugin.cfg")) File.Delete($"{directory}\\viewrplugin.cfg");
+                                ZipFile.ExtractToDirectory($"assets\\configs\\{cfg}", directory);
+                            }
                         }
+
                     }
                 }
             }
-
             MessageBox.Show("Finished running installer.");
         }
 
@@ -140,6 +147,8 @@ namespace Include.VR.Viewer.Mod
                 newGame.GameDirectory = Path.GetFileName(Path.GetDirectoryName(ofd.FileName));
                 newGame.GameName = Path.GetFileNameWithoutExtension(ofd.FileName);
                 newGame.ConfigName = null;
+
+                // if newly added game is in the supported game list
                 foreach (SupportedGame game in supportedGameList)
                 {
                     if (game.ExeName == newGame.ExeName)
@@ -148,6 +157,8 @@ namespace Include.VR.Viewer.Mod
                         break;
                     }
                 }
+
+                // if we couldn't find it, we use default.zip
                 if (newGame.ConfigName == null)
                     newGame.ConfigName = "default.zip";
                 lstBox.Items.Add(newGame, true);
@@ -230,8 +241,8 @@ namespace Include.VR.Viewer.Mod
                 SteamAppID = x.SteamAppID,
                 GameDirectory = x.GameDirectory,
                 GameName = x.GameName,
-                ConfigName = (x.SteamAppID == 0 ? x.ConfigName : null),
-                Library = (x.SteamAppID == 0 ? x.Library : null)
+                ConfigName = x.ConfigName,
+                Library = x.SteamAppID == 0 ? x.Library : null
             }).ToList(),
             new JsonSerializerSettings()
             {

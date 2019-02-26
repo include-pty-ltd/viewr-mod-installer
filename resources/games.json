@@ -16,5 +16,11 @@
     "GameName": "Budget Cuts",
     "GameDirectory": "Budget Cuts",
     "ExeName": "Budget Cuts.exe"
+  },
+  {
+    "SteamAppID": 382000,
+    "GameName": "Mindshow",
+    "GameDirectory": "Mindshow",
+    "ExeName": "Mindshow.exe"
   }
 ]

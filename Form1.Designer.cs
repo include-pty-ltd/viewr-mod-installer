@@ -36,12 +36,13 @@
             this.lstBox = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnPatch
             // 
             this.btnPatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPatch.Location = new System.Drawing.Point(212, 205);
+            this.btnPatch.Location = new System.Drawing.Point(212, 215);
             this.btnPatch.Name = "btnPatch";
             this.btnPatch.Size = new System.Drawing.Size(95, 26);
             this.btnPatch.TabIndex = 1;
@@ -52,7 +53,7 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(315, 205);
+            this.btnExit.Location = new System.Drawing.Point(315, 215);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(95, 26);
             this.btnExit.TabIndex = 2;
@@ -63,7 +64,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(111, 205);
+            this.btnAdd.Location = new System.Drawing.Point(111, 215);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 26);
             this.btnAdd.TabIndex = 3;
@@ -74,7 +75,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(10, 205);
+            this.btnRefresh.Location = new System.Drawing.Point(10, 215);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(95, 26);
             this.btnRefresh.TabIndex = 4;
@@ -90,7 +91,7 @@
             this.lstBox.FormattingEnabled = true;
             this.lstBox.Location = new System.Drawing.Point(10, 29);
             this.lstBox.Name = "lstBox";
-            this.lstBox.Size = new System.Drawing.Size(400, 169);
+            this.lstBox.Size = new System.Drawing.Size(400, 154);
             this.lstBox.TabIndex = 5;
             // 
             // label1
@@ -109,11 +110,23 @@
             this.lblDescription.TabIndex = 6;
             this.lblDescription.Text = "Please select games which you would like to mod.";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(10, 193);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Overwrite configs";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmViewrModLoader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 243);
+            this.ClientSize = new System.Drawing.Size(422, 253);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstBox);
@@ -138,6 +151,7 @@
         private System.Windows.Forms.CheckedListBox lstBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
