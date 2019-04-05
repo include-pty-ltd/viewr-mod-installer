@@ -48,7 +48,7 @@ namespace Include.VR.Viewer.Mod
                 {
                     if (!File.Exists(filename))
                     {
-                        MessageBox.Show("Install files are missing! Please download again.");
+                        MessageBox.Show("Install files are missing! Please download ViewR Mod Installer again.");
                         return;
                     }
                 }
