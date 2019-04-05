@@ -59,6 +59,8 @@ namespace Include.VR.Viewer.Mod
                     if (sg != null)
                     {
                         string directory = $"{sg.Library}\\{sg.GameDirectory}";
+                        MessageBox.Show($"patching in {directory}");
+
                         int result = -1;
                         try
                         {
@@ -187,7 +189,6 @@ namespace Include.VR.Viewer.Mod
             if (File.Exists(installPath + @"\steamapps\libraryfolders.vdf"))
             {
                 // only do the steamapps folder in the current path
-                // valve's dumb data format. 
                 Regex r = new Regex(".*{(.+)}.*", RegexOptions.Singleline);
                 MatchCollection mc = r.Matches(File.ReadAllText(installPath + @"\steamapps\libraryfolders.vdf"));
                 string valveGarbageFileContents = mc[0].Groups[1].Captures[0].Value.Trim();
@@ -208,21 +209,24 @@ namespace Include.VR.Viewer.Mod
             }
 
             lstBox.Items.Clear();
-            foreach (string library in libraryLocations)
+
+            foreach(SupportedGame sg in supportedGameList)
             {
-                DirectoryInfo dip = new DirectoryInfo(library);
-                foreach (DirectoryInfo d in dip.GetDirectories())
+                if(sg.SteamAppID != 0)
                 {
-                    SupportedGame sg = supportedGameList.Where(x => x.GameDirectory == d.Name).FirstOrDefault();
-                    if (sg != null && File.Exists(Path.GetDirectoryName(library) + $"\\appmanifest_{sg.SteamAppID}.acf") && sg.SteamAppID != 0)
+                    foreach(string library in libraryLocations)
                     {
-                        sg.Library = library;
-                        lstBox.Items.Add(sg, true);
+                        if (File.Exists(Path.GetDirectoryName(library) + $"\\appmanifest_{sg.SteamAppID}.acf"))
+                        {
+                            sg.Library = library;
+                            lstBox.Items.Add(sg, true);
+                            break;
+                        }
                     }
                 }
             }
 
-            //// add custom items
+            // add custom items
             List<SupportedGame> custom = supportedGameList.Where(x => x.SteamAppID == 0).ToList();
             foreach (SupportedGame sg in custom)
             {
@@ -241,7 +245,7 @@ namespace Include.VR.Viewer.Mod
                 SteamAppID = x.SteamAppID,
                 GameDirectory = x.GameDirectory,
                 GameName = x.GameName,
-                ConfigName = x.ConfigName,
+                ConfigName = x.ConfigName == "default.zip" ?  null : x.ConfigName,
                 Library = x.SteamAppID == 0 ? x.Library : null
             }).ToList(),
             new JsonSerializerSettings()
