@@ -35,7 +35,8 @@ namespace Include.VR.Viewer.Mod
         private void frmViewrModLoader_Load(object sender, EventArgs e)
         {
             string[] parts = Application.ProductVersion.Split('.');
-            this.Text += $" v.{parts[1]}{parts[2]}{(parts[3] == "0" ? "" : "." + parts[3])}";
+                        
+            this.Text += $" v.{parts[0].PadLeft(2,'0')}{parts[1].PadLeft(2, '0')}{(parts[2].PadLeft(2, '0'))}";
             RefreshData();
         }
 
