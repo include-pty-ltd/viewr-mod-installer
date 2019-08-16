@@ -88,11 +88,13 @@
             this.lstBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstBox.CheckOnClick = true;
             this.lstBox.FormattingEnabled = true;
             this.lstBox.Location = new System.Drawing.Point(10, 29);
             this.lstBox.Name = "lstBox";
             this.lstBox.Size = new System.Drawing.Size(400, 154);
             this.lstBox.TabIndex = 5;
+            this.lstBox.SelectedIndexChanged += new System.EventHandler(this.lstBox_SelectedIndexChanged);
             // 
             // label1
             // 

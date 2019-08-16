@@ -60,7 +60,7 @@ namespace Include.VR.Viewer.Mod
                     if (sg != null)
                     {
                         string directory = $"{sg.Library}\\{sg.GameDirectory}";
-                        MessageBox.Show($"patching in {directory}");
+                        //MessageBox.Show($"patching in {directory}");
 
                         int result = -1;
                         try
@@ -255,6 +255,10 @@ namespace Include.VR.Viewer.Mod
                 NullValueHandling = NullValueHandling.Ignore
             })
             );
+        }
+
+        private void lstBox_SelectedIndexChanged(object sender, EventArgs e) {
+
         }
     }
 
